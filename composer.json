@@ -101,8 +101,7 @@
 		"pre-install-cmd": "ComposerHookHandler::onPreInstall",
 		"pre-update-cmd": "ComposerHookHandler::onPreUpdate",
 		"post-install-cmd": [
-			"ComposerVendorHtaccessCreator::onEvent",
-			"sudo chmod 744 -R /app/extensions/GoogleLogin/cache"
+			"ComposerVendorHtaccessCreator::onEvent"
 		],
 		"post-update-cmd": "ComposerVendorHtaccessCreator::onEvent",
 		"test": [
