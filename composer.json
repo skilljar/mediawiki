@@ -107,7 +107,7 @@
 			"composer phpcs"
 		],
     	"compile": [
-      		"chmod -R 644 extensions/GoogleLogin/cache/"
+      		"chmod -R 644 /extensions/GoogleLogin/cache/"
     	]
 	},
 	"config": {
