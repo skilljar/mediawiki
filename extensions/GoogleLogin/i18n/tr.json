@@ -1,0 +1,20 @@
+{
+	"@metadata": {
+		"authors": [
+			"Sayginer",
+			"Watermelon juice",
+			"HakanIST"
+		]
+	},
+	"googlelogin": "Google ile oturum aç",
+	"googlelogin-manage-yes": "evet",
+	"googlelogin-manage-no": "hayır",
+	"googlelogin-manage-openpluslink": "Google+ profili aç",
+	"googlelogin-manage-plusinfo-title": "Profil bilgileri",
+	"googlelogin-manage-errorloading": "Yükleme hatası",
+	"googlelogin-username": "Kullanıcı",
+	"googlelogin-create": "Google ile oluştur",
+	"googlelogin-email": "E-posta adresi",
+	"googlelogin-googleuser": "Google kullanıcısı",
+	"notification-header-change-googlelogin": "Bağlı olan Google hesaplarınız değiştirildi"
+}

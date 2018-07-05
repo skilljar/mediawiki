@@ -130,3 +130,10 @@ $wgDefaultSkin = "vector";
 # Add more configuration options below.
 
 wfLoadSkin( 'Vector' );
+require_once "$IP/extensions/GoogleLogin/GoogleLogin.php";
+
+$wgGLSecret = getenv('GOOGLE_OAUTH_SECRET');
+$wgGLAppId = getenv('GOOGLE_OAUTH_CLIENT_ID');
+$wgGLAllowedDomains = array('skilljar.com');
+$wgWhitelistRead = array('Special:GoogleLoginReturn');
+
