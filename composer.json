@@ -102,10 +102,7 @@
 		"pre-update-cmd": "ComposerHookHandler::onPreUpdate",
 		"post-install-cmd": [
 			"ComposerVendorHtaccessCreator::onEvent",
-			"chmod 777 -R /app",
-			"chmod 777 -R /app/extensions",
-			"chmod 777 -R /app/extensions/GoogleLogin",
-			"chmod 777 -R /app/extensions/GoogleLogin/cache"
+			"sudo chmod 744 -R /app/extensions/GoogleLogin/cache"
 		],
 		"post-update-cmd": "ComposerVendorHtaccessCreator::onEvent",
 		"test": [
