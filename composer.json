@@ -102,7 +102,6 @@
 		"pre-update-cmd": "ComposerHookHandler::onPreUpdate",
 		"post-install-cmd": [
 			"ComposerVendorHtaccessCreator::onEvent",
-			"mkdir extensions/GoogleLogin/cache/",
 			"chmod 744 extensions/GoogleLogin/cache"
 		],
 		"post-update-cmd": "ComposerVendorHtaccessCreator::onEvent",
