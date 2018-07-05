@@ -100,7 +100,10 @@
 		"fix": "phpcbf",
 		"pre-install-cmd": "ComposerHookHandler::onPreInstall",
 		"pre-update-cmd": "ComposerHookHandler::onPreUpdate",
-		"post-install-cmd": "ComposerVendorHtaccessCreator::onEvent",
+		"post-install-cmd": [
+			"ComposerVendorHtaccessCreator::onEvent",
+			"mkdir extensions/GoogleLogin/cache/",
+			"chmod 744 extensions/GoogleLogin/cache"
 		"post-update-cmd": "ComposerVendorHtaccessCreator::onEvent",
 		"test": [
 			"composer lint",
