@@ -136,4 +136,4 @@ $wgGLSecret = getenv('GOOGLE_OAUTH_SECRET');
 $wgGLAppId = getenv('GOOGLE_OAUTH_CLIENT_ID');
 $wgGLAllowedDomains = array('skilljar.com');
 $wgWhitelistRead = array('Special:GoogleLoginReturn');
-
+$wgShowExceptionDetails = true;
