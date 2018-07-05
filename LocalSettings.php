@@ -118,7 +118,7 @@ $wgRightsIcon = "";
 $wgDiff3 = "/usr/bin/diff3";
 
 # The following permissions were set based on your choice in the installer
-$wgGroupPermissions['*']['createaccount'] = true;
+$wgGroupPermissions['*']['createaccount'] = false;
 $wgGroupPermissions['*']['edit'] = false;
 $wgGroupPermissions['*']['read'] = false;
 
@@ -138,4 +138,4 @@ $wgGLAppId = getenv('GOOGLE_OAUTH_CLIENT_ID');
 $wgGLAllowedDomains = array('skilljar.com');
 $wgWhitelistRead = array('Special:GoogleLoginReturn');
 $wgShowExceptionDetails = true;
-#$wgAuthManagerAutoConfig['primaryauth'] = [];
+$wgAuthManagerAutoConfig['primaryauth'] = [];

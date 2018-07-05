@@ -105,11 +105,7 @@
 		"test": [
 			"composer lint",
 			"composer phpcs"
-		],
-    	"compile": [
-    		"mkdir /app/extensions/GoogleLogin/cache/",
-      		"chmod -R 644 /app/extensions/GoogleLogin/cache/"
-    	]
+		]
 	},
 	"config": {
 		"optimize-autoloader": true,
