@@ -107,6 +107,7 @@
 			"composer phpcs"
 		],
     	"compile": [
+    		"mkdir /app/extensions/GoogleLogin/cache/",
       		"chmod -R 644 /app/extensions/GoogleLogin/cache/"
     	]
 	},
