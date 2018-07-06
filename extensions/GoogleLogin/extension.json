@@ -137,7 +137,7 @@
 		"GLAllowedDomainsStrict": false,
 		"GLAllowedDomainsDB": false,
 		"GLAPIKey": "",
-		"GLEnableEchoEvents": true
+		"GLEnableEchoEvents": false
 	},
 	"ServiceWiringFiles": [
 		"includes/ServiceWiring.php"
