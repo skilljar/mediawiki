@@ -126,8 +126,12 @@ $wgGroupPermissions['*']['read'] = false;
 ## names, ie 'vector', 'monobook':
 $wgDefaultSkin = "vector";
 
+#
+#
 # End of automatically generated settings.
 # Add more configuration options below.
+#
+#
 
 wfLoadSkin( 'Vector' );
 require_once 'vendor/autoload.php';
@@ -139,3 +143,5 @@ $wgGLAllowedDomains = array('skilljar.com');
 $wgWhitelistRead = array('Special:GoogleLoginReturn');
 $wgShowExceptionDetails = true;
 $wgAuthManagerAutoConfig['primaryauth'] = [];
+
+wfLoadExtension( 'ImportUsers' );
