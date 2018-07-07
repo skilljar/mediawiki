@@ -186,3 +186,10 @@ $wgUploadDialog['fields'] = array(
 	'categories' => true,
 );
 
+#-----------------------------------------------------------------
+
+// avoid the error message:
+// "Note: Due to technical limitations, thumbnails of high resolution GIF images such as this one will not be animated."
+$wgMaxAnimatedGifArea = 9000000000;
+
+#-----------------------------------------------------------------
