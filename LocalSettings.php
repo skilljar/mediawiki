@@ -165,7 +165,7 @@ $wgHiddenPrefs[] = 'visualeditor-enable';
 $wgVirtualRestConfig['modules']['parsoid'] = array(
     // URL to the Parsoid instance
     // Use port 8142 if you use the Debian package
-    'url' => 'https://skilljar-wiki-parsoid.herokuapp.com/',
+    'url' => 'https://skilljar-wiki-parsoid.herokuapp.com',
     // Parsoid "domain", see below (optional)
     // 'domain' => 'localhost',
     // Parsoid "prefix", see below (optional)
@@ -175,4 +175,9 @@ $wgVirtualRestConfig['modules']['parsoid'] = array(
 );
 
 #-----------------------------------------------------------------
+
+wfLoadExtension( 'SyntaxHighlight_GeSHi' );
+
+#-----------------------------------------------------------------
+
 
