@@ -237,7 +237,7 @@
 		} );
 		this.descriptionWidget = new OO.ui.MultilineTextInputWidget( {
 			required: false,
-			validate: /\S+/,
+			/* validate: /\S+/, */
 			autosize: true
 		} );
 		this.categoriesWidget = new mw.widgets.CategoryMultiselectWidget( {
