@@ -75,7 +75,6 @@ Thumbs.db
 /favicon.ico
 /static*
 /tags
-/.htaccess
 /.htpasswd
 /tests/phan/issues
 *.rej
