@@ -165,11 +165,13 @@ $wgHiddenPrefs[] = 'visualeditor-enable';
 $wgVirtualRestConfig['modules']['parsoid'] = array(
     // URL to the Parsoid instance
     // Use port 8142 if you use the Debian package
-    'url' => 'http://localhost:8000',  // TODO(Aaron) suspect.  Will this work?
+    'url' => 'https://skilljar-wiki-parsoid.herokuapp.com/',
     // Parsoid "domain", see below (optional)
-    'domain' => 'localhost',
+    // 'domain' => 'localhost',
     // Parsoid "prefix", see below (optional)
-    'prefix' => 'localhost'
+    // 'prefix' => 'localhost'
+	// If you run a private wiki then you have to set the following variable to true:
+	'forwardCookies' => true
 );
 
 #-----------------------------------------------------------------
