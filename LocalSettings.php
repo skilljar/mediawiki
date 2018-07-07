@@ -200,3 +200,12 @@ $wgUploadDialog['fields'] = array(
 ////
 
 #-----------------------------------------------------------------
+
+# Enable subpages in the main namespace
+$wgNamespacesWithSubpages[NS_MAIN] = true;
+
+# Enable subpages in the template namespace
+$wgNamespacesWithSubpages[NS_TEMPLATE] = true;
+
+#-----------------------------------------------------------------
+
