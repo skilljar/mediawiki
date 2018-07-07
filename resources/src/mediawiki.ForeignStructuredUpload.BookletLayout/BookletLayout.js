@@ -456,7 +456,7 @@
 	mw.ForeignStructuredUpload.BookletLayout.prototype.clear = function () {
 		mw.ForeignStructuredUpload.BookletLayout.parent.prototype.clear.call( this );
 
-		this.ownWorkCheckbox.setSelected( false );
+		this.ownWorkCheckbox.setSelected( true );
 		this.categoriesWidget.setValue( [] );
 		this.dateWidget.setValue( '' ).setValidityFlag( true );
 	};
