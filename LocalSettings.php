@@ -144,4 +144,23 @@ $wgWhitelistRead = array('Special:GoogleLoginReturn');
 $wgShowExceptionDetails = true;
 #$wgAuthManagerAutoConfig['primaryauth'] = [];
 
+#-----------------------------------------------------------------
+
 wfLoadExtension( 'ImportUsers' );
+
+#-----------------------------------------------------------------
+
+wfLoadExtension( 'VisualEditor' );
+
+// Enable by default for everybody
+$wgDefaultUserOptions['visualeditor-enable'] = 1;
+
+// Optional: Set VisualEditor as the default for anonymous users
+// otherwise they will have to switch to VE
+// $wgDefaultUserOptions['visualeditor-editor'] = "visualeditor";
+
+// Don't allow users to disable it
+$wgHiddenPrefs[] = 'visualeditor-enable';
+
+#-----------------------------------------------------------------
+
