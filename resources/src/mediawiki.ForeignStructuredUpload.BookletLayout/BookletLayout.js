@@ -236,7 +236,7 @@
 			validate: /.+/
 		} );
 		this.descriptionWidget = new OO.ui.MultilineTextInputWidget( {
-			required: true,
+			required: false,
 			validate: /\S+/,
 			autosize: true
 		} );
