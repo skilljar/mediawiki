@@ -180,4 +180,9 @@ wfLoadExtension( 'SyntaxHighlight_GeSHi' );
 
 #-----------------------------------------------------------------
 
+$wgUploadDialog['fields'] = array(
+	'description' => true,
+	'date' => false,
+	'categories' => true,
+);
 
