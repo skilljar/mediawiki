@@ -143,7 +143,10 @@ $wgGLAppId = getenv('GOOGLE_OAUTH_CLIENT_ID');
 $wgGLAllowedDomains = array('skilljar.com');
 $wgWhitelistRead = array('Special:GoogleLoginReturn');
 $wgShowExceptionDetails = true;
-#$wgAuthManagerAutoConfig['primaryauth'] = [];
+
+# comment if you need to manually create a new account;
+# otherwise, the line below disables email login and forces -only- Google OAuth logins
+$wgAuthManagerAutoConfig['primaryauth'] = [];
 
 #-----------------------------------------------------------------
 
