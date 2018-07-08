@@ -210,3 +210,5 @@ $wgNamespacesWithSubpages[NS_TEMPLATE] = true;
 
 #-----------------------------------------------------------------
 
+# ensure external links open in a new tab, automatically
+$wgExternalLinkTarget = '_blank';
