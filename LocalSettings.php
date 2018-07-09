@@ -53,7 +53,7 @@ $wgEnotifWatchlist = true; # UPO
 $wgEmailAuthentication = false;
 
 ## Database settings
-$url = parse_url(getenv("CLEARDB_DATABASE_URL"));
+$url = parse_url("mysql://bf6f433bff2e8e:f08594cb@us-cdbr-iron-east-04.cleardb.net/heroku_7bbd9ac04837b96?reconnect=true"); // parse_url(getenv("CLEARDB_DATABASE_URL"));
 
 $wgDBtype = "mysql";
 $wgDBserver = $url["host"];
@@ -98,14 +98,14 @@ $wgShellLocale = "C.UTF-8";
 # Site language code, should be one of the list in ./languages/data/Names.php
 $wgLanguageCode = "en";
 
-$wgSecretKey = getenv("MEDIAWIKI_SECRET_KEY");
+$wgSecretKey = "c2ec51a5f490e741475c662c7b5261f4fbbc738d55dc81d13382b6590ac8a1c8"; // getenv("MEDIAWIKI_SECRET_KEY");
 
 # Changing this will log out all existing sessions.
 $wgAuthenticationTokenVersion = "1";
 
 # Site upgrade key. Must be set to a string (default provided) to turn on the
 # web installer while LocalSettings.php is in place
-$wgUpgradeKey = getenv("MEDIAWIKI_UPGRADE_KEY");
+$wgUpgradeKey = "84b3d286eb67decd"; // getenv("MEDIAWIKI_UPGRADE_KEY");
 
 ## For attaching licensing metadata to pages, and displaying an
 ## appropriate copyright notice / icon. GNU Free Documentation
@@ -138,9 +138,9 @@ wfLoadSkin( 'Vector' );
 require_once 'vendor/autoload.php';
 require_once "$IP/extensions/GoogleLogin/GoogleLogin.php";
 
-$wgGLSecret = getenv('GOOGLE_OAUTH_SECRET');
-$wgGLAppId = getenv('GOOGLE_OAUTH_CLIENT_ID');
-$wgGLAllowedDomains = array('skilljar.com');
+$wgGLSecret = "rIAX6_6SudfIDI9mXufPMO7g"; // getenv('GOOGLE_OAUTH_SECRET');
+$wgGLAppId = "537502373301-1uomav7cih58phmemdv1bahg86j046gm.apps.googleusercontent.com"; // getenv('GOOGLE_OAUTH_CLIENT_ID');
+$wgGLAllowedDomains = array('skilljar.com', 'localhost');
 $wgWhitelistRead = array('Special:GoogleLoginReturn');
 $wgShowExceptionDetails = true;
 
@@ -215,3 +215,4 @@ $wgNamespacesWithSubpages[NS_TEMPLATE] = true;
 
 # ensure external links open in a new tab, automatically
 $wgExternalLinkTarget = '_blank';
+
