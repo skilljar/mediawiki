@@ -54,6 +54,7 @@ $wgEmailAuthentication = false;
 
 ## Database settings
 $url = parse_url("mysql://bf6f433bff2e8e:f08594cb@us-cdbr-iron-east-04.cleardb.net/heroku_7bbd9ac04837b96?reconnect=true"); // parse_url(getenv("CLEARDB_DATABASE_URL"));
+$url = parse_url(getenv("DATABASE_URL"));
 
 $wgDBtype = "mysql";
 $wgDBserver = $url["host"];
