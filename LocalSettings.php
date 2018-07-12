@@ -217,3 +217,11 @@ $wgNamespacesWithSubpages[NS_TEMPLATE] = true;
 # ensure external links open in a new tab, automatically
 $wgExternalLinkTarget = '_blank';
 
+#-----------------------------------------------------------------
+
+# super long session expiration
+$wgExtendedLoginCookieExpiration = 31536000;  # 1 year in seconds
+$wgCookieExpiration = 31536000;
+
+#-----------------------------------------------------------------
+
