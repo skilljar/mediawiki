@@ -46,10 +46,11 @@ $wgEnableEmail = true;
 $wgEnableUserEmail = false; # UPO
 
 $wgEmergencyContact = "aaron@skilljar.com";
-$wgPasswordSender = "aaron@skilljar.com";
 
-$wgEnotifUserTalk = false; # UPO
+$wgEnotifUserTalk = true; # UPO
 $wgEnotifWatchlist = true; # UPO
+$wgEnotifMinorEdits = true;
+$wgUseEnotif = true;
 $wgEmailAuthentication = false;
 
 ## Database settings
@@ -224,4 +225,19 @@ $wgExtendedLoginCookieExpiration = 31536000;  # 1 year in seconds
 $wgCookieExpiration = 31536000;
 
 #-----------------------------------------------------------------
+
+$wgNoReplyAddress = 'no-reply-wiki-bot@skilljar.com';
+$wgPasswordSender = 'no-reply-wiki-bot@skilljar.com';
+
+$wgSendGridAPIKey = getenv("SENDGRID_API_KEY");
+wfLoadExtension( 'SendGrid' );
+
+// $wgSMTP = array(
+//    'host' => 'ssl://smtp.gmail.com',
+//    'IDHost' => 'gmail.com',
+//    'port' => 465,
+//    'username' => 'wiki@skilljar.com',  # Now a defunct account, but this is what it'd look like
+//    'password' => 'wenakfomiwrjqdwv',   # if you used an email account instead of a faceless one.
+//    'auth' => true,
+// );
 
