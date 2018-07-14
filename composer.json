@@ -54,7 +54,8 @@
 		"wikimedia/wrappedstring": "3.0.1",
 		"wikimedia/xmp-reader": "0.5.1",
 		"mediawiki/vector-skin": "dev-wmf/1.32.0-wmf.10",
-		"zordius/lightncandy": "0.23"
+		"zordius/lightncandy": "0.23",
+		"sendgrid/sendgrid": "^7.0"
 	},
 	"require-dev": {
 		"composer/spdx-licenses": "1.3.0",
