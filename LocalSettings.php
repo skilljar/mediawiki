@@ -241,3 +241,7 @@ wfLoadExtension( 'SendGrid' );
 //    'auth' => true,
 // );
 
+#------------------------------------------------------------------
+
+$wgUploadSizeWarning = 0;  # disable all warnings
+$wgMaxUploadSize = 1024 * 1024 * 512;  # 512MB
