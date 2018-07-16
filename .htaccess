@@ -17,3 +17,6 @@ RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 # rule for prettier Wiki document urls
 
 RewriteRule ^/?wiki(/.*)?$ %{DOCUMENT_ROOT}/index.php [L]
+
+php_value upload_max_filesize 512M
+php_value post_max_size 512M
