@@ -248,3 +248,8 @@ $wgMaxUploadSize = 1024 * 1024 * 128;  # 128MB
 $wgStrictFileExtensions = false;
 $wgCheckFileExtensions = false;
 
+#-------------------------------------
+
+wfLoadExtension( 'WikiEditor' );  # better default wikitext editor
+$wgHiddenPrefs[] = 'usebetatoolbar';
+
