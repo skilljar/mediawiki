@@ -252,4 +252,7 @@ $wgCheckFileExtensions = false;
 
 wfLoadExtension( 'WikiEditor' );  # better default wikitext editor
 $wgHiddenPrefs[] = 'usebetatoolbar';
+$wgDefaultUserOptions['usebetatoolbar'] = true;
+$wgDefaultUserOptions['usebetatoolbar-cgd'] = true;
+$wgDefaultUserOptions['rememberpassword'] = 1;
 

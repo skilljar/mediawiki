@@ -38,7 +38,7 @@ class RememberMeAuthenticationRequest extends AuthenticationRequest {
 	protected $expiration = null;
 
 	/** @var bool */
-	public $rememberMe = false;
+	public $rememberMe = true;
 
 	public function __construct() {
 		/** @var SessionProvider $provider */
@@ -59,6 +59,7 @@ class RememberMeAuthenticationRequest extends AuthenticationRequest {
 				'help' => wfMessage( 'authmanager-userlogin-remembermypassword-help' ),
 				'optional' => true,
 				'skippable' => true,
+				'default' => true,
 			]
 		];
 	}
