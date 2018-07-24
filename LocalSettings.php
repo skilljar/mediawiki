@@ -31,7 +31,7 @@ $wgScriptPath = "";
 $wgArticlePath = "/wiki/$1";
 
 ## The protocol and server name to use in fully-qualified URLs
-$wgServer = getenv('SERVER_NAME');
+$wgServer = getenv('WIKI_SERVER_NAME');
 
 ## The URL path to static resources (images, scripts, etc.)
 $wgResourceBasePath = $wgScriptPath;
