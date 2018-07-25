@@ -57,7 +57,7 @@ $wgEnotifUserTalk = true; # UPO
 $wgEnotifWatchlist = true; # UPO
 $wgEnotifMinorEdits = true;
 $wgUseEnotif = true;
-$wgEmailAuthentication = false;
+$wgEmailAuthentication = true;
 
 ## Database settings
 $url = parse_url(getenv("DATABASE_URL"));
@@ -153,7 +153,7 @@ $wgShowExceptionDetails = true;
 
 # comment if you need to manually create a new account;
 # otherwise, the line below disables email login and forces -only- Google OAuth logins
-$wgAuthManagerAutoConfig['primaryauth'] = [];
+#$wgAuthManagerAutoConfig['primaryauth'] = [];
 
 #-----------------------------------------------------------------
 
