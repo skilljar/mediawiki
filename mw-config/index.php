@@ -20,6 +20,10 @@
  *
  * @file
  */
+ini_set( 'display_errors', 1 );
+ini_set( 'session.gc_maxlifetime', "15552000");
+ini_set( 'session.cookie_lifetime', "15552000");
+phpinfo();
 
 // Bail on old versions of PHP, or if composer has not been run yet to install
 // dependencies. Using dirname( __FILE__ ) here because __DIR__ is PHP5.3+.
