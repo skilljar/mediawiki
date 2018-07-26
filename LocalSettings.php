@@ -261,3 +261,6 @@ $wgDefaultUserOptions['usebetatoolbar'] = true;
 $wgDefaultUserOptions['usebetatoolbar-cgd'] = true;
 $wgDefaultUserOptions['rememberpassword'] = 1;
 
+#-----------------------------
+
+wfLoadExtension( 'DynamicPageList' );
