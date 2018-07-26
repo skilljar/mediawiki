@@ -257,7 +257,14 @@ $wgCheckFileExtensions = false;
 
 wfLoadExtension( 'WikiEditor' );  # better default wikitext editor
 $wgHiddenPrefs[] = 'usebetatoolbar';
-$wgDefaultUserOptions['usebetatoolbar'] = true;
-$wgDefaultUserOptions['usebetatoolbar-cgd'] = true;
+$wgDefaultUserOptions['usebetatoolbar'] = 1;
+$wgDefaultUserOptions['usebetatoolbar-cgd'] = 1;
 $wgDefaultUserOptions['rememberpassword'] = 1;
+
+
+#---------------------------------------
+
+require_once "$IP/extensions/ClipUpload/ClipUpload.php";
+$wgClipUP_MaxFileSize = 1024 * 128;  # in KB;  this is 131,072KB or 128MB
+
 
