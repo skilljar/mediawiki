@@ -271,3 +271,19 @@ $wgClipUP_MaxFileSize = 1024 * 128;  # in KB;  this is 131,072KB or 128MB
 
 wfLoadExtension( 'DynamicPageList' );
 
+#----------------------------------------
+
+wfLoadExtension( 'AWS' );
+
+// Configure AWS credentials.
+// THIS IS NOT NEEDED if your EC2 instance has an IAM instance profile.
+$wgAWSCredentials = [
+    'key' => getenv('S3_ACCESS_KEY'),
+    'secret' => getenv('S3_SECRET'),
+    'token' => false
+];
+
+$wgAWSRegion = 'us-east-1'; # Northern Virginia
+
+// Replace <something> with the prefix of your S3 buckets, e.g. wonderfulbali234.
+$wgAWSBucketPrefix = "skilljar-wiki";
