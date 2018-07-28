@@ -1075,11 +1075,10 @@ abstract class LoginSignupSpecialPage extends AuthManagerSpecialPage {
 					'type' => 'hidden',  # NOTE(aaron, 2018.07.28) added this to simplify our login form
 				],
 				// button for ResetPasswordSecondaryAuthenticationProvider
-				'skipReset' => [
-					'weight' => 110,
-					'flags' => [],
-					'type' => 'hidden',  # NOTE(aaron, 2018.07.28) added this to simplify our login form
-				],
+				// 'skipReset' => [
+				// 	'weight' => 110,
+				// 	'flags' => [],
+				// ],
 			];
 		}
 
