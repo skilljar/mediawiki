@@ -1033,10 +1033,12 @@ abstract class LoginSignupSpecialPage extends AuthManagerSpecialPage {
 					'label-raw' => $this->msg( 'userlogin-yourname' )->escaped() . $secureLoginLink,
 					'id' => 'wpName1',
 					'placeholder-message' => 'userlogin-yourname-ph',
+					'type' => 'hidden',  # NOTE(aaron, 2018.07.28) added this to simplify our login form
 				],
 				'password' => [
 					'id' => 'wpPassword1',
 					'placeholder-message' => 'userlogin-yourpassword-ph',
+					'type' => 'hidden',  # NOTE(aaron, 2018.07.28) added this to simplify our login form
 				],
 				'domain' => [],
 				'extrainput' => [],
@@ -1047,6 +1049,8 @@ abstract class LoginSignupSpecialPage extends AuthManagerSpecialPage {
 					'label-message' => $this->msg( 'userlogin-remembermypassword' )
 						->numParams( $expirationDays ),
 					'id' => 'wpRemember',
+					'default' => true,
+					'type' => 'hidden',  # NOTE(aaron, 2018.07.28) added this to simplify our login form
 				],
 				'loginattempt' => [
 					// submit button
@@ -1054,6 +1058,7 @@ abstract class LoginSignupSpecialPage extends AuthManagerSpecialPage {
 					'default' => $this->msg( 'pt-login-' . $continuePart . 'button' )->text(),
 					'id' => 'wpLoginAttempt',
 					'weight' => 100,
+					'type' => 'hidden',  # NOTE(aaron, 2018.07.28) added this to simplify our login form
 				],
 				'linkcontainer' => [
 					// help link
@@ -1067,11 +1072,13 @@ abstract class LoginSignupSpecialPage extends AuthManagerSpecialPage {
 							->text() ),
 					], $this->msg( 'userlogin-helplink2' )->text() ),
 					'weight' => 200,
+					'type' => 'hidden',  # NOTE(aaron, 2018.07.28) added this to simplify our login form
 				],
 				// button for ResetPasswordSecondaryAuthenticationProvider
 				'skipReset' => [
 					'weight' => 110,
 					'flags' => [],
+					'type' => 'hidden',  # NOTE(aaron, 2018.07.28) added this to simplify our login form
 				],
 			];
 		}
