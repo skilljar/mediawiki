@@ -199,16 +199,16 @@ $wgUploadDialog['fields'] = array(
 
 #-----------------------------------------------------------------
 
-//// avoid the error message:
-//// "Note: Due to technical limitations, thumbnails of high resolution GIF images such as this one will not be animated."
+// avoid the error message:
+// "Note: Due to technical limitations, thumbnails of high resolution GIF images such as this one will not be animated."
 
-// $wgMaxAnimatedGifArea = 9000000000;
+$wgMaxAnimatedGifArea = 250000000;
 
-//// Wasn't working.
-////
-//// "Error creating thumbnail: /app/includes/shell/limit.sh: line 101: 321 Segmentation fault /usr/bin/timeout 
-////  $MW_WALL_CLOCK_LIMIT /bin/bash -c "$1" 3>&- Error code: 139"
-////
+// Wasn't working.
+//
+// "Error creating thumbnail: /app/includes/shell/limit.sh: line 101: 321 Segmentation fault /usr/bin/timeout 
+//  $MW_WALL_CLOCK_LIMIT /bin/bash -c "$1" 3>&- Error code: 139"
+//
 
 #-----------------------------------------------------------------
 
