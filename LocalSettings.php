@@ -289,38 +289,4 @@ $wgAWSRegion = 'us-east-1'; # Northern Virginia
 // Replace <something> with the prefix of your S3 buckets, e.g. wonderfulbali234.
 $wgAWSBucketPrefix = "skilljar-wiki";
 
-// suspect config below, TODO.  likely this is deprecated.
-// not making the problem any worse (or better)
-
-$wgFileBackends['s3'] = array(
-    'name'        => 'AmazonS3',
-    'class'       => 'AmazonS3FileBackend',
-    'lockManager' => 'nullLockManager',
-    'awsKey'      => getenv('S3_ACCESS_KEY'),
-    'awsSecret'   => getenv('S3_SECRET'),
-    'awsRegion'   => 'us-east-1',
-    'containerPaths' => array(
-        'skilljar-wikk-local-public'  => 'skilljar-wiki',
-        'skilljar-wiki-local-thumb'   => 'skilljar-wiki-thumb',
-        'skilljar-wiki-local-deleted' => 'skilljar-wiki-deleted',
-        'skilljar-wiki-local-temp'    => 'skilljar-wiki-temp',
-    )
-);
- 
-$wgLocalFileRepo = array(
-    'class'           => 'LocalRepo',
-    'name'            => 'local',
-    'backend'         => 'AmazonS3',
-    'scriptDirUrl'    => $wgScriptPath,
-    'scriptExtension' => '.php',
-    'url'             => $wgScriptPath . '/img_auth.php',
-    'zone'            => array(
-        'public'  => array( 'container' => 'public' ),
-        'thumb'   => array( 'container' => 'thumb' ),
-        'temp'    => array( 'container' => 'temp' ),
-        'deleted' => array( 'container' => 'deleted' )
-    )
-);
- 
-$wgImgAuthPublicTest = false;
 
