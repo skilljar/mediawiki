@@ -203,6 +203,8 @@ $wgUploadDialog['fields'] = array(
 // "Note: Due to technical limitations, thumbnails of high resolution GIF images such as this one will not be animated."
 
 // $wgMaxAnimatedGifArea = 250000000;
+
+// Note(Aaron):  the above wasn't working so I just disabled all thumbnail creation.  Good enough.
 $wgUseImageResize = false;
 
 // Wasn't working.
