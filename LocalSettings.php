@@ -238,7 +238,7 @@ $wgNoReplyAddress = 'no-reply-wiki-bot@skilljar.com';
 $wgPasswordSender = 'no-reply-wiki-bot@skilljar.com';
 
 $wgSendGridAPIKey = getenv("SENDGRID_API_KEY");
-wfLoadExtension( 'SendGrid' );
+#wfLoadExtension( 'SendGrid' );
 
 // $wgSMTP = array(
 //    'host' => 'ssl://smtp.gmail.com',
