@@ -234,11 +234,11 @@ $wgCookieExpiration = 31536000;
 
 #-----------------------------------------------------------------
 
-$wgNoReplyAddress = 'no-reply-wiki-bot@skilljar.com';
-$wgPasswordSender = 'no-reply-wiki-bot@skilljar.com';
+$wgNoReplyAddress = 'wiki-bot-no-reply@skilljar.com';
+$wgPasswordSender = 'wiki-bot-no-reply@skilljar.com';
 
 $wgSendGridAPIKey = getenv("SENDGRID_API_KEY");
-#wfLoadExtension( 'SendGrid' );
+wfLoadExtension( 'SendGrid' );
 
 // $wgSMTP = array(
 //    'host' => 'ssl://smtp.gmail.com',
