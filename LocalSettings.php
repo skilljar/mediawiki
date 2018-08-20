@@ -292,4 +292,9 @@ $wgAWSRegion = 'us-east-1'; # Northern Virginia
 // Replace <something> with the prefix of your S3 buckets, e.g. wonderfulbali234.
 $wgAWSBucketPrefix = "skilljar-wiki";
 
+#---------------------------------------
 
+$wgPopupsOptInDefaultState="1";
+wfLoadExtension( 'PageImages' );
+wfLoadExtension( 'TextExtracts' );
+wfLoadExtension( 'Popups' );
