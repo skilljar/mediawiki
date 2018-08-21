@@ -298,3 +298,8 @@ $wgPopupsOptInDefaultState="1";
 wfLoadExtension( 'PageImages' );
 wfLoadExtension( 'TextExtracts' );
 wfLoadExtension( 'Popups' );
+
+#----------------------
+
+$wgGroupPermissions['user']['delete'] = true;
+$wgGroupPermissions['user']['viewdeleted'] = true;
