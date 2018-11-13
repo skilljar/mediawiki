@@ -303,3 +303,7 @@ wfLoadExtension( 'Popups' );
 
 $wgGroupPermissions['user']['delete'] = true;
 $wgGroupPermissions['user']['viewdeleted'] = true;
+
+#----------------------
+
+$wgRawHtml = true;
