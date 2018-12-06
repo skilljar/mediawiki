@@ -307,3 +307,9 @@ $wgGroupPermissions['user']['viewdeleted'] = true;
 #----------------------
 
 $wgRawHtml = true;
+
+#----------------------
+# allow html files to be uploaded
+$wgFileExtensions[] = 'html';
+$wgFileBlacklist = array_diff( $wgFileBlacklist, array ('html') );
+
