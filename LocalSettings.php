@@ -312,4 +312,4 @@ $wgRawHtml = true;
 # allow html files to be uploaded
 $wgFileExtensions[] = 'html';
 $wgFileBlacklist = array_diff( $wgFileBlacklist, array ('html') );
-
+$wgMimeTypeBlacklist = array_diff( $wgFileBlacklist, array ('text/html') );
