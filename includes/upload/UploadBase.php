@@ -1267,125 +1267,127 @@ abstract class UploadBase {
 	 * @return bool True if the file contains something looking like embedded scripts
 	 */
 	public static function detectScript( $file, $mime, $extension ) {
-		global $wgAllowTitlesInSVG;
+		return false;  // NOTE:  commented out by Aaron, 2018.12.06.
 
-		# ugly hack: for text files, always look at the entire file.
-		# For binary field, just check the first K.
+		// global $wgAllowTitlesInSVG;
 
-		if ( strpos( $mime, 'text/' ) === 0 ) {
-			$chunk = file_get_contents( $file );
-		} else {
-			$fp = fopen( $file, 'rb' );
-			$chunk = fread( $fp, 1024 );
-			fclose( $fp );
-		}
+		// # ugly hack: for text files, always look at the entire file.
+		// # For binary field, just check the first K.
 
-		$chunk = strtolower( $chunk );
+		// if ( strpos( $mime, 'text/' ) === 0 ) {
+		// 	$chunk = file_get_contents( $file );
+		// } else {
+		// 	$fp = fopen( $file, 'rb' );
+		// 	$chunk = fread( $fp, 1024 );
+		// 	fclose( $fp );
+		// }
 
-		if ( !$chunk ) {
-			return false;
-		}
+		// $chunk = strtolower( $chunk );
 
-		# decode from UTF-16 if needed (could be used for obfuscation).
-		if ( substr( $chunk, 0, 2 ) == "\xfe\xff" ) {
-			$enc = 'UTF-16BE';
-		} elseif ( substr( $chunk, 0, 2 ) == "\xff\xfe" ) {
-			$enc = 'UTF-16LE';
-		} else {
-			$enc = null;
-		}
+		// if ( !$chunk ) {
+		// 	return false;
+		// }
 
-		if ( $enc ) {
-			$chunk = iconv( $enc, "ASCII//IGNORE", $chunk );
-		}
+		// # decode from UTF-16 if needed (could be used for obfuscation).
+		// if ( substr( $chunk, 0, 2 ) == "\xfe\xff" ) {
+		// 	$enc = 'UTF-16BE';
+		// } elseif ( substr( $chunk, 0, 2 ) == "\xff\xfe" ) {
+		// 	$enc = 'UTF-16LE';
+		// } else {
+		// 	$enc = null;
+		// }
 
-		$chunk = trim( $chunk );
+		// if ( $enc ) {
+		// 	$chunk = iconv( $enc, "ASCII//IGNORE", $chunk );
+		// }
 
-		/** @todo FIXME: Convert from UTF-16 if necessary! */
-		wfDebug( __METHOD__ . ": checking for embedded scripts and HTML stuff\n" );
+		// $chunk = trim( $chunk );
 
-		# check for HTML doctype
-		if ( preg_match( "/<!DOCTYPE *X?HTML/i", $chunk ) ) {
-			return true;
-		}
+		// /** @todo FIXME: Convert from UTF-16 if necessary! */
+		// wfDebug( __METHOD__ . ": checking for embedded scripts and HTML stuff\n" );
 
-		// Some browsers will interpret obscure xml encodings as UTF-8, while
-		// PHP/expat will interpret the given encoding in the xml declaration (T49304)
-		if ( $extension == 'svg' || strpos( $mime, 'image/svg' ) === 0 ) {
-			if ( self::checkXMLEncodingMissmatch( $file ) ) {
-				return true;
-			}
-		}
+		// # check for HTML doctype
+		// if ( preg_match( "/<!DOCTYPE *X?HTML/i", $chunk ) ) {
+		// 	return false;  // NOTE: Aaron was here.  Was previously return true
+		// }
 
-		/**
-		 * Internet Explorer for Windows performs some really stupid file type
-		 * autodetection which can cause it to interpret valid image files as HTML
-		 * and potentially execute JavaScript, creating a cross-site scripting
-		 * attack vectors.
-		 *
-		 * Apple's Safari browser also performs some unsafe file type autodetection
-		 * which can cause legitimate files to be interpreted as HTML if the
-		 * web server is not correctly configured to send the right content-type
-		 * (or if you're really uploading plain text and octet streams!)
-		 *
-		 * Returns true if IE is likely to mistake the given file for HTML.
-		 * Also returns true if Safari would mistake the given file for HTML
-		 * when served with a generic content-type.
-		 */
-		$tags = [
-			'<a href',
-			'<body',
-			'<head',
-			'<html', # also in safari
-			'<img',
-			'<pre',
-			'<script', # also in safari
-			'<table'
-		];
+		// // Some browsers will interpret obscure xml encodings as UTF-8, while
+		// // PHP/expat will interpret the given encoding in the xml declaration (T49304)
+		// if ( $extension == 'svg' || strpos( $mime, 'image/svg' ) === 0 ) {
+		// 	if ( self::checkXMLEncodingMissmatch( $file ) ) {
+		// 		return true;
+		// 	}
+		// }
 
-		if ( !$wgAllowTitlesInSVG && $extension !== 'svg' && $mime !== 'image/svg' ) {
-			$tags[] = '<title';
-		}
+		// *
+		//  * Internet Explorer for Windows performs some really stupid file type
+		//  * autodetection which can cause it to interpret valid image files as HTML
+		//  * and potentially execute JavaScript, creating a cross-site scripting
+		//  * attack vectors.
+		//  *
+		//  * Apple's Safari browser also performs some unsafe file type autodetection
+		//  * which can cause legitimate files to be interpreted as HTML if the
+		//  * web server is not correctly configured to send the right content-type
+		//  * (or if you're really uploading plain text and octet streams!)
+		//  *
+		//  * Returns true if IE is likely to mistake the given file for HTML.
+		//  * Also returns true if Safari would mistake the given file for HTML
+		//  * when served with a generic content-type.
+		 
+		// $tags = [
+		// 	'<a href',
+		// 	'<body',
+		// 	'<head',
+		// 	'<html', # also in safari
+		// 	'<img',
+		// 	'<pre',
+		// 	'<script', # also in safari
+		// 	'<table'
+		// ];
 
-		foreach ( $tags as $tag ) {
-			if ( false !== strpos( $chunk, $tag ) ) {
-				wfDebug( __METHOD__ . ": found something that may make it be mistaken for html: $tag\n" );
+		// if ( !$wgAllowTitlesInSVG && $extension !== 'svg' && $mime !== 'image/svg' ) {
+		// 	$tags[] = '<title';
+		// }
 
-				return true;
-			}
-		}
+		// foreach ( $tags as $tag ) {
+		// 	if ( false !== strpos( $chunk, $tag ) ) {
+		// 		wfDebug( __METHOD__ . ": found something that may make it be mistaken for html: $tag\n" );
 
-		/*
-		 * look for JavaScript
-		 */
+		// 		return true;
+		// 	}
+		// }
 
-		# resolve entity-refs to look at attributes. may be harsh on big files... cache result?
-		$chunk = Sanitizer::decodeCharReferences( $chunk );
+		// /*
+		//  * look for JavaScript
+		//  */
 
-		# look for script-types
-		if ( preg_match( '!type\s*=\s*[\'"]?\s*(?:\w*/)?(?:ecma|java)!sim', $chunk ) ) {
-			wfDebug( __METHOD__ . ": found script types\n" );
+		// # resolve entity-refs to look at attributes. may be harsh on big files... cache result?
+		// $chunk = Sanitizer::decodeCharReferences( $chunk );
 
-			return true;
-		}
+		// # look for script-types
+		// if ( preg_match( '!type\s*=\s*[\'"]?\s*(?:\w*/)?(?:ecma|java)!sim', $chunk ) ) {
+		// 	wfDebug( __METHOD__ . ": found script types\n" );
 
-		# look for html-style script-urls
-		if ( preg_match( '!(?:href|src|data)\s*=\s*[\'"]?\s*(?:ecma|java)script:!sim', $chunk ) ) {
-			wfDebug( __METHOD__ . ": found html-style script urls\n" );
+		// 	return true;
+		// }
 
-			return true;
-		}
+		// # look for html-style script-urls
+		// if ( preg_match( '!(?:href|src|data)\s*=\s*[\'"]?\s*(?:ecma|java)script:!sim', $chunk ) ) {
+		// 	wfDebug( __METHOD__ . ": found html-style script urls\n" );
 
-		# look for css-style script-urls
-		if ( preg_match( '!url\s*\(\s*[\'"]?\s*(?:ecma|java)script:!sim', $chunk ) ) {
-			wfDebug( __METHOD__ . ": found css-style script urls\n" );
+		// 	return true;
+		// }
 
-			return true;
-		}
+		// # look for css-style script-urls
+		// if ( preg_match( '!url\s*\(\s*[\'"]?\s*(?:ecma|java)script:!sim', $chunk ) ) {
+		// 	wfDebug( __METHOD__ . ": found css-style script urls\n" );
 
-		wfDebug( __METHOD__ . ": no scripts found\n" );
+		// 	return true;
+		// }
 
-		return false;
+		// wfDebug( __METHOD__ . ": no scripts found\n" );
+
+		// return false;
 	}
 
 	/**
