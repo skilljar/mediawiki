@@ -25,7 +25,7 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 ## Uncomment this to disable output compression
 # $wgDisableOutputCompression = true;
 
-$wgSitename = "skilljar";
+$wgSitename = "Skilljar Wiki";
 $wgMetaNamespace = "Skilljar";
 
 ## The URL base path to the directory containing the wiki;
