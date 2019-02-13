@@ -313,3 +313,11 @@ $wgRawHtml = true;
 $wgFileExtensions[] = 'html';
 $wgFileBlacklist = array_diff( $wgFileBlacklist, array ('html') );
 $wgMimeTypeBlacklist = array_diff( $wgFileBlacklist, array ('text/html') );
+
+#-------------
+require_once "$IP/extensions/Scribunto/Scribunto.php";
+$wgScribuntoDefaultEngine = 'luastandalone';
+$wgScribuntoUseGeSHi = true;
+
+#--------------
+wfLoadExtension( 'TemplateStyles' );
