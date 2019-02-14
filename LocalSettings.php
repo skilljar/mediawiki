@@ -320,7 +320,4 @@ $wgScribuntoDefaultEngine = 'luastandalone';
 $wgScribuntoUseGeSHi = true;
 
 #--------------
-wfLoadExtension( 'CSS' );
 wfLoadExtension( 'TemplateStyles' );
-
-$wgUseInstantCommons = true;
