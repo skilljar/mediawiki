@@ -320,4 +320,9 @@ $wgScribuntoDefaultEngine = 'luastandalone';
 $wgScribuntoUseGeSHi = true;
 
 #--------------
+#wfLoadExtension( 'CSS' );
 wfLoadExtension( 'TemplateStyles' );
+
+$wgShowExceptionDetails = true;
+$wgShowDBErrorBacktrace = true;
+$wgShowSQLErrors = true;
