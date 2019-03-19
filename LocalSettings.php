@@ -326,3 +326,6 @@ wfLoadExtension( 'TemplateStyles' );
 $wgShowExceptionDetails = true;
 $wgShowDBErrorBacktrace = true;
 $wgShowSQLErrors = true;
+
+#--------------
+wfLoadExtension( 'Iframe' );
