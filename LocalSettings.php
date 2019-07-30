@@ -329,3 +329,8 @@ $wgShowSQLErrors = true;
 
 #--------------
 wfLoadExtension( 'Iframe' );
+
+# allows wiki to be embedded in Engineering onboarding course, e.g. https://skillets.skilljar.com/engineering-week-1-connect/313982
+$wgEditPageFrameOptions = false;
+$wgBreakFrames = false;
+
