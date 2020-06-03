@@ -135,7 +135,7 @@ class EmailDomain {
 			throw new MWException( $cacheFolder . ' is not writeable!' );
 		}
 		$tlds = file(
-			'http://mxr.mozilla.org/mozilla-central/source/netwerk/dns/effective_tld_names.dat?raw=1'
+			'$dir/skilljar_tld.dat'
 		);
 		if ( $tlds === false ) {
 			throw new MWException( 'Domainlist can not be downloaded!' );
