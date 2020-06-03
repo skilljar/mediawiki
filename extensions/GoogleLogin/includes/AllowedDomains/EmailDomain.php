@@ -134,9 +134,7 @@ class EmailDomain {
 		if ( !is_writable( $cacheFolder ) ) {
 			throw new MWException( $cacheFolder . ' is not writeable!' );
 		}
-		$tlds = file(
-			'skilljar_tld.dat'
-		);
+		$tlds = file(__DIR__ . "/skilljar_tld.dat");
 		if ( $tlds === false ) {
 			throw new MWException( 'Domainlist can not be downloaded!' );
 		}
