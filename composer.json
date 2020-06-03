@@ -53,7 +53,7 @@
 		"wikimedia/wait-condition-loop": "1.0.1",
 		"wikimedia/wrappedstring": "3.0.1",
 		"wikimedia/xmp-reader": "0.5.1",
-		"mediawiki/vector-skin": "dev-wmf/1.32.0-wmf.10",
+		"mediawiki/vector-skin": "dev-REL1_32",
 		"zordius/lightncandy": "0.23",
 		"sendgrid/sendgrid": "^7.0"
 	},
