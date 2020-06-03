@@ -132,10 +132,8 @@ class Iframe {
         )
     );
     foreach ($config as $key => $value) {
-      if (array_key_exists($key, $wgIframe)) {
-        if (is_array($config[$key])) {
-          $wgIframe[$key] = array_merge($config[$key], $wgIframe[$key]);
-        }
+      if (is_array($wgIframe) && array_key_exists($key, $wgIframe) && is_array($config[$key])) {
+        $wgIframe[$key] = array_merge($config[$key], $wgIframe[$key]);
       } else {
         $wgIframe[$key] = $config[$key];
       }
